@@ -1,6 +1,6 @@
-namespace TMPS.Services.Reporting;
+namespace LabSolid.Services.Reporting;
 
-public class IPrintable
+public interface IPrintable
 {
-    
+    void Print();
 }

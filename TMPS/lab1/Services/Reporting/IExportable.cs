@@ -1,6 +1,6 @@
-namespace TMPS.Services.Reporting;
+namespace LabSolid.Services.Reporting;
 
-public class IExportable
+public interface IExportable
 {
-    
+    void ExportToFile(string filePath);
 }

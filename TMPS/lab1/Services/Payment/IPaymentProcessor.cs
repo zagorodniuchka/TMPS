@@ -1,6 +1,8 @@
-namespace TMPS.Services.Payment;
+using LabSolid.Models;
 
-public class IPaymentProcessor
+namespace LabSolid.Services.Payment;
+
+public interface IPaymentProcessor
 {
-    
+    void ProcessPayment(Order order);
 }

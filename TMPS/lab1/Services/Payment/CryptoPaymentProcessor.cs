@@ -1,6 +1,11 @@
-namespace TMPS.Services.Payment;
+using LabSolid.Models;
 
-public class CryptoPaymentProcessor
+namespace LabSolid.Services.Payment;
+
+public class CryptoPaymentProcessor : IPaymentProcessor
 {
-    
+    public void ProcessPayment(Order order)
+    {
+        Console.WriteLine($"Processing crypto payment for order {order.Id} - {order.TotalAmount}$");
+    }
 }
