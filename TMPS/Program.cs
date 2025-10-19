@@ -1,4 +1,6 @@
-﻿    public class Program
+﻿    using TMPS.lab2;
+
+    public class Program
     {
         public static void Main(string[] args)
         {
@@ -13,12 +15,12 @@
                 case "1":
                     new Lab1Runner().Run();
                     break;
-                // case "2":
-                //     new Lab2Runner().Run();
-                //     break;
-                // default:
-                //     Console.WriteLine("Invalid option.");
-                //     break;
+                case "2":
+                    new Lab2Runner().Run();
+                    break;
+                default:
+                    Console.WriteLine("Invalid option.");
+                    break;
             }
         }
     }
