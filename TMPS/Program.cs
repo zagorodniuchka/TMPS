@@ -1,29 +1,24 @@
-﻿using LabSolid.Models;
-using LabSolid.Services;
-using LabSolid.Services.Payment;
-using LabSolid.Services.Reporting;
-
-class Program
-{
-    static void Main()
+﻿    public class Program
     {
-        var validator = new OrderValidator();
-        var repository = new OrderRepository();
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Select Laboratory Work:");
+            Console.WriteLine("1 - SOLID Principles");
+            Console.WriteLine("2 - Creational Design Patterns");
+            Console.Write("Enter number: ");
+            var input = Console.ReadLine();
 
-        var order1 = new Order("001", "Alice", 120.50m);
-        var order2 = new Order("002", "Bob", 300m);
-
-        // SRP — проверка и сохранение
-        if (validator.Validate(order1)) repository.Save(order1);
-        if (validator.Validate(order2)) repository.Save(order2);
-
-        // OCP — легко меняем способ оплаты
-        IPaymentProcessor paymentProcessor = new CryptoPaymentProcessor();
-        paymentProcessor.ProcessPayment(order1);
-
-        // ISP — отчёт печатается и экспортируется
-        var report = new OrderReport(repository.GetAll());
-        report.Print();
-        report.ExportToFile("orders_report.csv");
+            switch (input)
+            {
+                case "1":
+                    new Lab1Runner().Run();
+                    break;
+                // case "2":
+                //     new Lab2Runner().Run();
+                //     break;
+                // default:
+                //     Console.WriteLine("Invalid option.");
+                //     break;
+            }
+        }
     }
-}
